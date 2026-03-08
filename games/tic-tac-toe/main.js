@@ -54,6 +54,8 @@ export default class TicTacToe extends Game {
                 const $block = $(block);
                 const $img = $block.find("img");
 
+                $block.removeClass("active");
+
                 $block.on("mouseenter", () => {
                     if (!$block.data("holding")) this.animateEnter($img);
                 });
@@ -213,7 +215,7 @@ export default class TicTacToe extends Game {
 
         this.board[row][col] = this.turno;
         $block.addClass("active");
-        $block.off("mouseenter mouseleave mousedown mouseup touchstart touchend");
+        $block.off();
 
         this.check();
 
@@ -244,7 +246,7 @@ export default class TicTacToe extends Game {
 
             if (b0 && b0 === b1 && b1 === b2) {
                 console.log("Vencedor: " + b0);
-                this.animateClear();
+                this.reset();
                 return;
             }
         }
@@ -266,8 +268,8 @@ export default class TicTacToe extends Game {
         $lines.each((i, line) => {
             const $blocks = $(line).children();
             $blocks.each((j, block) => {
-                $(block).removeClass("active");
-                $(block).off("mouseenter mouseleave mousedown mouseup touchstart touchend");
+                $(block).addClass("active");
+                $(block).off();
                 const $img = $(block).find("img");
 
                 const index = (i * 3) + j;
@@ -285,6 +287,6 @@ export default class TicTacToe extends Game {
 
         setTimeout(() => {
             this.setEvents();
-        }, 1100);
+        }, 1500);
     }
 }
