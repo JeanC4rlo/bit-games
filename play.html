@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bit Games: Jogo não definido</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/play.css">
+    <script src="scripts/play.js" defer></script>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+<header>
+    <a href="index.html"><img src="logo.png" alt=""></a>
+    <h1></h1>
+</header>
+<main>
+    <canvas id="canvas"></canvas>
+    <div id="ui"></div>
+</main>
+
+</body>
+
+<script type="module">
+    import { GameLoader } from "./scripts/GameLoader.js";
+    GameLoader.init("games", document.querySelector("#canvas"), $("#ui"));
+</script>
+</html>

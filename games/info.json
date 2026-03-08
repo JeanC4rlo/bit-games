@@ -1,0 +1,8 @@
+[
+    {
+        "id": "ttt",
+        "slug": "tic-tac-toe",
+        "class": "TicTacToe",
+        "name": "Tic Tac Toe"
+    }
+]

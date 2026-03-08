@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+img {
+    display: block;
+    image-rendering: pixelated;
+}
+
+@font-face {
+    font-family: 'Jersey 10';
+    src: url('fonts/Jersey_10/Jersey_10.ttf');
+}

@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Bit Games</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="jquery.js"></script>
 </head>
 <body>
-    
+    <header>
+        <a href="index.html"><img src="logo.png" alt=""></a>
+    </header>
+    <main>
+        <section class="selection"></section>
+    </main>
 </body>
+<script type="module">
+    import { GameRepo } from "./scripts/GameRepo.js";
+    GameRepo.init("games", $(".selection"));
+</script>
 </html>
