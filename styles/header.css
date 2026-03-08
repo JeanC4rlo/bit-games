@@ -13,8 +13,8 @@ header a {
     --scale: 2;
 
     display: block;
-    width: calc(100px * var(--scale));
-    height: calc(18px * var(--scale));
+    min-width: calc(100px * var(--scale));
+    min-height: calc(18px * var(--scale));
 }
 
 header img {

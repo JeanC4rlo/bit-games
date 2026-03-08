@@ -1,18 +1,23 @@
 export class Game {
-    constructor({name, canvas, $ui}) {
+    constructor({ name, canvas, $ui }) {
         this.name = name;
         this.canvas = canvas;
         this.$ui = $ui;
     }
 
-    start() {}
-    update(dt) {}
-    render() {}
+    start() { }
+    update(dt) { }
+    render() { }
     resize() {
-        const parent = this.canvas.parentElement;
+        requestAnimationFrame(() => {
+            const parent = this.canvas.parentElement;
 
-        this.canvas.width = parent.clientWidth;
-        this.canvas.height = parent.clientHeight;
+            const width = parent.getBoundingClientRect().width;
+            const height = parent.getBoundingClientRect().height;
+
+            this.canvas.width = width;
+            this.canvas.height = height;
+        });
     }
     async boot() {
         this.resize();
