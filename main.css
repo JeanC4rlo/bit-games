@@ -6,6 +6,12 @@
 img {
     display: block;
     image-rendering: pixelated;
+    pointer-events: none;
+}
+
+img::selection {
+    color: none;
+    background-color: transparent;
 }
 
 @font-face {

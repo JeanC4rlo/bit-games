@@ -1,0 +1,31 @@
+#ui {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.line {
+    display: flex;
+    gap: 8px;
+}
+
+.block {
+    cursor: pointer;
+}
+
+.block.active {
+    cursor: auto;
+}
+
+.block img {
+    aspect-ratio: 1;
+    max-width: 150px;
+    width: 10vw;
+    min-width: 75px;
+}

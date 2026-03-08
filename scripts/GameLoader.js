@@ -43,6 +43,11 @@ export class GameLoader {
         $(document).prop("title", `Bit Games: ${gameInfo.name}`);
         $("header h1").text(gameInfo.name);
 
+        $("<link>", {
+            rel: "stylesheet",
+            href: `${GameLoader.path}/${gameInfo.slug}/main.css`
+        }).appendTo("head");
+
         const module = await import(`../${GameLoader.path}/${gameInfo.slug}/main.js`);
 
         const GameClass = module.default;
