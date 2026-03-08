@@ -63,12 +63,12 @@ export default class TicTacToe extends Game {
                     if (!this.holding) this.animateLeave($img);
                 });
 
-                $block.on("mousedown", () => {
+                $block.on("mousedown touchstart", () => {
                     this.holding = true;
                     this.animateDown($img);
                 });
 
-                $block.on("mouseup", () => {
+                $block.on("mouseup touchend", () => {
                     this.holding = false;
                     this.animateUp($img);
                     this.round($block);
